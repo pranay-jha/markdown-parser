@@ -20,7 +20,12 @@ public class MarkdownParse {
                 int space = markdown.indexOf(" ", closeBracket + 3);
                 String link = "";
                 if (space > escape || space == -1) {
-                    link = markdown.substring(closeBracket + 3, escape);
+                    if (escape == -1) {
+                        link = markdown.substring(closeBracket + 3);
+                        toReturn.add(link);
+                        break;
+                    }
+                    else link = markdown.substring(closeBracket + 3, escape);
                     currentIndex = escape + 1;
                 }
                 else {
@@ -50,6 +55,7 @@ public class MarkdownParse {
         Path fileName = Path.of(args[0]);
         String content = Files.readString(fileName);
         //System.out.println(content + '\n');
+        System.out.println("Part 2 of Lab 4");
         ArrayList<String> links = getLinks(content);
 	    System.out.println(links);
     }
