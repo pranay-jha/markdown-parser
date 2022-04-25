@@ -14,6 +14,7 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
+            if (closeBracket == - 1) break;
             if (markdown.charAt(closeBracket + 1) == ':') {
                 //System.out.println("found a :");
                 int escape = markdown.indexOf("\r\n", closeBracket + 3);
