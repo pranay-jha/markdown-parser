@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 //added a comment
+//added another comment
+//added a third comment
 public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
