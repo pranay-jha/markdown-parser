@@ -61,5 +61,11 @@ public class MarkdownParseTest {
         ArrayList<String> output = MarkdownParse.getLinks(markdown);
         assertEquals(expectedLinks, output);
     }
+    
+    @Test
+    public void fifthTest() {
+	// vim test
+	assertEquals(1 + 1, 2);
+    }
 
 }
